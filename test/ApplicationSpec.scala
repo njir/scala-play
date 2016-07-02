@@ -39,4 +39,16 @@ class ApplicationSpec extends PlaySpec with OneAppPerTest {
 
   }
 
+  "TakController" should {
+
+     "render the index page" in {
+      val home = route(app, FakeRequest(GET, "/tak")).get
+
+      status(home) mustBe OK
+      contentType(home) mustBe Some("text/html")
+      contentAsString(home) must include ("Tak Test")
+    }
+
+  }
+
 }
