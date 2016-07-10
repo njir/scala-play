@@ -1,20 +1,20 @@
-@*
- * This template takes a single argument, a String containing a
- * message to display.
- *@
-@(message: String)
+@(players: List[Player])
 
-@*
- * Call the `main` template with two arguments. The first
- * argument is a `String` with the title of the page, the second
- * argument is an `Html` object containing the body of the page.
- *@
-@main("Welcome to Play") {
+@main("Player List") {
+    <h2>Insert a player here:</h2>
 
-    @*
-     * Get an `Html` object by calling the built-in Play welcome
-     * template and passing a `String` message.
-     *@
-    @play20.welcome(message, style = "Scala")
+    <form action="/player/single" method="POST">
+        <input name="name" type="text" placeholder="player name"/>
+        <input name="level" type="text" placeholder="player level"/>
+        <input type="submit"/>
+    </form>
 
+    <h2>Previously inserted players:</h2>
+
+    <table>
+        <tr><th>idPlayer</th><th>Name</th><th>Level</th></tr>
+        @for(p <- players){
+            <tr><td>@p.idPlayer</td><td>@p.name</td><td>@p.level</td></tr>
+        }
+    </table>
 }

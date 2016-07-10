@@ -20,7 +20,7 @@ class ApplicationController @Inject() extends Controller {
    * a path of `/`.
    */
   def index = Action {
-    Ok(views.html.index("test"))
+    Ok("test")
   }
 
   def getStock = Action {

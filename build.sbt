@@ -11,7 +11,8 @@ libraryDependencies ++= Seq(
   cache,
   ws,
   "org.scalatestplus.play" %% "scalatestplus-play" % "1.5.1" % Test,
-  "postgresql" % "postgresql" % "9.1-901.jdbc4"
+  "com.typesafe.play" %% "play-slick" % "0.8.1",
+  "org.postgresql" % "postgresql" % "9.2-1002-jdbc4"
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
