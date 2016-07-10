@@ -18,7 +18,11 @@ class TakController @Inject() extends Controller {
    * a path of `/`.
    */
   def tak = Action {
-    Ok(views.html.index("Tak Test"))
+    Ok(views.html.tak("Tak Test"))
   }
 
+  // request test
+  def takRequest = Action { request =>
+    Ok("got request: " + request)
+  }
 }
