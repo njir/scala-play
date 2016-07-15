@@ -13,7 +13,7 @@ import play.api.data.Forms._
 import play.api.db.slick.DBAction
 import play.api.libs.json.Json
 import play.api.mvc._
-import dao.{ Inventories, Players}
+import dao.{ Inventories, Players, Items }
 import models.{ PlayerBag, Item, Inventory, Player}
 
 //object Application extends Controller {
